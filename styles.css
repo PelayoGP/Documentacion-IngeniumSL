@@ -1,0 +1,171 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    /* Permite el desplazamiento vertical si el contenido es más largo que la ventana */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    height: 10%;
+    text-align: center;
+    z-index: 1000;
+    /*INTENTODEANIMACION*/ animation: resize auto linear forwards;
+  animation-timeline: scroll(root block);
+}
+
+header h1 {
+    font-size: 90%;
+}
+
+.menu1 {
+    justify-content: space-between;
+}
+
+.menu1,
+.navbar {
+    display: flex;
+    /*justify-content: left; /* Centra los elementos horizontalmente */
+    align-items: center;
+    /* Alinea verticalmente al centro */
+    margin-bottom: 0.5%;
+    /* Espacio entre los dos bloques */
+}
+
+.navbar {
+    display: flex;
+    /* Usa flexbox para la barra de navegación */
+    justify-content: center;
+    /* Centra los elementos horizontalmente dentro de la barra */
+    align-items: center;
+    /* Borde inferior */
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+    /* Permite que la lista sea horizontal */
+
+    li{
+        display: inline;
+    /* Muestra los elementos de lista en línea */
+    margin-right: 10px;
+    /* Espacio entre elementos de lista */
+    }
+}
+
+
+
+.navbar ul li a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    /*Colordetextopredeterminado*/
+    background-color: transparent;
+    /*Fondotransparentepordefecto*/
+    transition: transform 0.3s, background-color 0.3s;
+    border-radius: 10%;
+    -webkit-border-radius: 10%;
+    -moz-border-radius: 10%;
+    -ms-border-radius: 10%;
+    -o-border-radius: 10%;
+}
+
+.navbar ul li a:hover {
+    background-color: blue;
+    color: #fff;
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    border-radius: 10%;
+    -webkit-border-radius: 10%;
+    -moz-border-radius: 10%;
+    -ms-border-radius: 10%;
+    -o-border-radius: 10%;
+}
+
+.logo {
+    width: 4%;
+    /* Ancho de la imagen del logo */
+    height: auto;
+    /* Altura automática para mantener la proporción */
+    margin-right: 5%;
+    /* Espacio a la derecha del logo */
+}
+
+.container {
+    position: relative;
+    width: 98%;
+    /* El ancho del contenedor será el 98% del tamaño de la ventana */
+    margin-left: 2%;
+    margin-top: 11%;
+    /* Empieza a un 15% del tamaño de la ventana */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Distribuye en 4 columnas de tamaño flexible */
+    gap: 5%;
+    /* Espacio entre las columnas */
+    background-color: white;
+    /* Color de fondo del contenedor */
+    padding: 20px;
+    /* Añade relleno al contenedor */
+    box-sizing: border-box;
+    /* Incluye el borde en el ancho total del contenedor */
+}
+
+
+.container div {
+    width: 350px;
+    /* Ancho fijo */
+    height: 200px;
+    background-color: blue;
+    /*Colordefondodeloselementosdiv*/
+    padding: 20px;
+    /*Espaciointernodentrodeloselementosdiv*/
+    text-align: center;
+    /*Alineacióndeltextoalcentro*/
+    color: white;
+    /*Colordeltexto*/
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra inicial */
+    transition: box-shadow 0.3s ease;
+    
+}
+
+.container :hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Nueva sombra al hacer hover */
+}
+
+.container div img {
+    display: block;
+    /* Hacer que la imagen sea un bloque para controlar el tamaño */
+    margin: 0 auto;
+    /* Centrar la imagen horizontalmente */
+    background-color: aqua;
+}
+
+@keyframes resize {
+    from {
+        opacity: 1;
+    }
+
+    /* Empieza con opacidad 0 (invisible) */
+    to {
+        opacity: 0;
+    }
+
+    /* Termina con opacidad 1 (visible) */
+}
