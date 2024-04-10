@@ -1,86 +1,103 @@
+:root {
+    --color-primary: #ffcc00;
+    --color-primary-dark: #d4a000;
+    --color-primary-light: #ffe066;
+
+    --color-secondary: #424242;
+    --color-secondary-dark: #1b1b1b;
+    --color-secondary-light: #616161;
+
+    --color-background: #212121;
+
+    --color-text: #ffffff;
+    --color-text-light: #b0bec5;
+
+    --color-accent: #fbc02d;
+}
+
+
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     overflow-y: auto;
-    /* Permite el desplazamiento vertical si el contenido es más largo que la ventana */
+    /* background-color: #18135C; */
+    background-color: var(--color-background);
 }
 
 header {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
-    background-color: white;
+    background-color: var(--color-background);
     padding: 20px;
     height: 10%;
     text-align: center;
     z-index: 1000;
-    /*INTENTODEANIMACION*/ animation: resize auto linear forwards;
-  animation-timeline: scroll(root block);
+    animation: headera auto linear forwards;
+    /* animation-timeline: scroll(root block); */
+    animation-timeline: view();
+    -webkit-animation: headera auto linear forwards;
 }
 
 header h1 {
-    font-size: 90%;
+    font-size: 1.5em;
 }
 
 .menu1 {
     justify-content: space-between;
+    animation: resize auto linear forwards;
+    animation-timeline: scroll();
+    color: var(--color-text);
 }
 
 .menu1,
 .navbar {
     display: flex;
-    /*justify-content: left; /* Centra los elementos horizontalmente */
     align-items: center;
-    /* Alinea verticalmente al centro */
     margin-bottom: 0.5%;
-    /* Espacio entre los dos bloques */
 }
 
 .navbar {
     display: flex;
-    /* Usa flexbox para la barra de navegación */
     justify-content: center;
-    /* Centra los elementos horizontalmente dentro de la barra */
     align-items: center;
-    /* Borde inferior */
+    position: fixed;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    animation: resize1 auto linear forwards;
+    animation-timeline: scroll(root block);
 }
 
 .navbar ul {
     list-style: none;
     padding: 0;
     display: inline-block;
-    /* Permite que la lista sea horizontal */
-
-    li{
+    li {
         display: inline;
-    /* Muestra los elementos de lista en línea */
-    margin-right: 10px;
-    /* Espacio entre elementos de lista */
+        margin-right: 10px;
     }
 }
-
-
 
 .navbar ul li a {
     display: inline-block;
     padding: 10px 20px;
     text-decoration: none;
-    color: #333;
-    /*Colordetextopredeterminado*/
     background-color: transparent;
-    /*Fondotransparentepordefecto*/
     transition: transform 0.3s, background-color 0.3s;
     border-radius: 10%;
     -webkit-border-radius: 10%;
     -moz-border-radius: 10%;
     -ms-border-radius: 10%;
     -o-border-radius: 10%;
+    color: var(--color-text); 
 }
 
 .navbar ul li a:hover {
-    background-color: blue;
-    color: #fff;
+    color: var(--color-text);
     transform: scale(1.2);
     -webkit-transform: scale(1.2);
     -moz-transform: scale(1.2);
@@ -93,79 +110,113 @@ header h1 {
     -o-border-radius: 10%;
 }
 
+.navbar ul li a {
+    animation: resize2 auto linear forwards;
+    animation-timeline: scroll(root block);
+    -webkit-animation: resize2 auto linear forwards;
+}
+
 .logo {
-    width: 4%;
-    /* Ancho de la imagen del logo */
+    width: 5%;
     height: auto;
-    /* Altura automática para mantener la proporción */
     margin-right: 5%;
-    /* Espacio a la derecha del logo */
 }
 
 .container {
-    position: relative;
-    width: 98%;
-    /* El ancho del contenedor será el 98% del tamaño de la ventana */
+    position: absolute;
+    width: 94%; /* Establece el ancho del contenedor al 100% del ancho del viewport */
+    max-width: 94%;
+    margin: 0 auto;
     margin-left: 2%;
     margin-top: 11%;
-    /* Empieza a un 15% del tamaño de la ventana */
+    margin-bottom: 50%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* Distribuye en 4 columnas de tamaño flexible */
+    grid-template-columns: repeat(3, 2fr);
     gap: 5%;
-    /* Espacio entre las columnas */
-    background-color: white;
-    /* Color de fondo del contenedor */
+    /* background-color: white; */
     padding: 20px;
-    /* Añade relleno al contenedor */
     box-sizing: border-box;
-    /* Incluye el borde en el ancho total del contenedor */
 }
-
 
 .container div {
-    width: 350px;
-    /* Ancho fijo */
-    height: 200px;
-    background-color: blue;
-    /*Colordefondodeloselementosdiv*/
-    padding: 20px;
-    /*Espaciointernodentrodeloselementosdiv*/
     text-align: center;
-    /*Alineacióndeltextoalcentro*/
-    color: white;
-    /*Colordeltexto*/
-    border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra inicial */
-    transition: box-shadow 0.3s ease;
-    
+    align-items: center;
+    /*PRUEBA ANIMACIÓN INTENTO*/
+    animation: pru auto linear forwards;
+    animation-timeline: view;
+}
+.container .obj {
+    width: 80%;
+    height: 65%;
+    background-color: var(--color-primary);
+    padding: 2%;
+    text-align: center;
+    color: var(--color-text);
+    border-radius:5%;
+    text-decoration: none;
+    -webkit-border-radius:5%;
+    -moz-border-radius:5%;
+    -ms-border-radius:5%;
+    -o-border-radius:5%;
+    transition: 0.3s ease;
+    -webkit-transition: 0.3s ease;
+    -moz-transition: 0.3s ease;
+    -ms-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
 }
 
-.container :hover {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Nueva sombra al hacer hover */
+.container .obj:hover {
+    box-shadow: 0 0 40px black;
+    scale: 1.07;
+}
+
+.container p {
+    text-align: center;
+    color: var(--color-text);
 }
 
 .container div img {
     display: block;
-    /* Hacer que la imagen sea un bloque para controlar el tamaño */
     margin: 0 auto;
-    /* Centrar la imagen horizontalmente */
-    background-color: aqua;
+    background-color: var(--color-background);
 }
+
 
 @keyframes resize {
     from {
         opacity: 1;
     }
-
-    /* Empieza con opacidad 0 (invisible) */
     to {
         opacity: 0;
     }
+}
+@keyframes resize1 {
+    from {
+        top: 15%;
+        color: initial;
+    }
+    to {
+        top: 8%;
+        color: var(--color-text);
 
-    /* Termina con opacidad 1 (visible) */
+    }
+}
+
+@keyframes headera {
+    from {
+        background-color: initial;
+    }
+    to {
+        background-color: var(--color-background);
+    }
+}
+
+@keyframes resize2 {
+    from {
+        color: var(--color-text);
+    }
+    to {
+        color: var(--color-text);
+
+    }
 }
