@@ -1,4 +1,4 @@
-# <center> Documentación-IngeniumSL </center> <br> <center>![Logo empresa](/imgReadme//logo_ingenium.svg)</center>
+# <center> Documentación-IngeniumSL </center> <br> <center>![Logo empresa](/ImgReadme//logo_ingenium.svg)</center>
 
 Aplicacion web desarrollada para la empresa IngeniumSL que permite la facilidad para integrar los manuales de documentación sobre los productos de la empresa. Permitirá la navegación y busqueda de todos los productos agregados, asi como la navegación dentro de los mismos por sus diferentes apartados a través de menus laterales dinámicos.
 
